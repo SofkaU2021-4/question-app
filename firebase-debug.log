@@ -1,0 +1,22 @@
+[debug] [2022-01-05T18:30:43.600Z] ----------------------------------------------------------------------
+[debug] [2022-01-05T18:30:43.602Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\juans\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-01-05T18:30:43.602Z] CLI Version:   10.0.1
+[debug] [2022-01-05T18:30:43.602Z] Platform:      win32
+[debug] [2022-01-05T18:30:43.602Z] Node Version:  v16.8.0
+[debug] [2022-01-05T18:30:43.605Z] Time:          Wed Jan 05 2022 13:30:43 GMT-0500 (Colombia Standard Time)
+[debug] [2022-01-05T18:30:43.605Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-05T18:30:43.607Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-01-05T18:30:43.627Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-05T18:30:43.627Z] > authorizing via signed-in user (jscrojas251@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\Programacion\sofka\New folder\questions
+
