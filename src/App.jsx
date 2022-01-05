@@ -18,7 +18,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PublicLayout/>}>
-            <Route path="" element={<HomePage/>}/>         
+            <Route path="" element={<HomePage/>}/>  
+                   
         </Route>
         <Route path="/home" element={<PrivateLayout/>}>
           <Route path="questionpage" element={<QuestionsPage/>}/>
