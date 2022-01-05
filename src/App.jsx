@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import {
   BrowserRouter,
@@ -12,23 +11,31 @@ import QuestionsPage from './pages/QuestionsPage';
 
 
 
+
+
 function App() {
+  
+
+
   return (
+    
     <div className="App">
+   
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PublicLayout/>}>
-            <Route path="" element={<HomePage/>}/>  
-                   
+            <Route path="" element={<HomePage/>}/>   
         </Route>
         <Route path="/home" element={<PrivateLayout/>}>
           <Route path="questionpage" element={<QuestionsPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
-      
     </div>
   );
+
+  
 }
+
 
 export default App;

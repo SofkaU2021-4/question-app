@@ -15,6 +15,6 @@ export const privateNavbar=[
         url:'/',    },
     {
         titulo: 'Questions',
-        url:'/Questions',
+        url:'/questionpage',
     }
 ];
