@@ -8,14 +8,13 @@ import PublicLayout from './layout/PublicLayout';
 import PrivateLayout from './layout/PrivateLayout';
 import HomePage from './pages/HomePage';
 import QuestionsPage from './pages/QuestionsPage';
+import QuestionPage from './pages/QuestionPage';
 
 
 
 
 
 function App() {
-  
-
 
   return (
     
@@ -28,6 +27,7 @@ function App() {
         </Route>
         <Route path="/home" element={<PrivateLayout/>}>
           <Route path="questionpage" element={<QuestionsPage/>}/>
+          <Route path="questionpage/question/:id" element={<QuestionPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

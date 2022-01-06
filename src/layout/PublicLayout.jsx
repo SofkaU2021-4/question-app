@@ -5,13 +5,13 @@ import {publicNavbar} from "../utils/NavbarList"
 import { app, google } from "../service/firebase"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { useDispatch ,useSelector } from "react-redux"
+import { useDispatch , useSelector  } from "react-redux"
 import {loginAction ,loggedAction} from "../actions/AuthorActions"
 
 
 const PublicLayout = () => {
+    const state = useSelector(state=>state)
     const dispatch = useDispatch()
-    const state = useSelector(state => state.auth)
 
     const navigate=useNavigate()
 
@@ -22,12 +22,12 @@ const PublicLayout = () => {
                 user.user.multiFactor.user.displayName,
                 user.user.multiFactor.user.uid,
                 user.user.multiFactor.user.photoURL))
-             navigate("/home")
+                navigate("/home")    
         })
         .catch()
       }
-      
 
+      
 useEffect(()=>{
     app.auth().onAuthStateChanged((user)=>{
       if(user){

@@ -5,7 +5,6 @@ export const loginAction = (email,name,uid,photo) => {
         type: actionsTypesAuth.LOGIN,
         payload: {email,name,uid,photo}
     }
-
 }
 
 export const logoutAction =()=>{

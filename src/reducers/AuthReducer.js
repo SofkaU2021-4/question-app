@@ -1,7 +1,7 @@
 import actionsTypesAuth from "../actions/actionsTypes/ActionsTypesAuth";
 
 const initialState = {
-    data: null,
+    user: null,
 }
 
 const reducerAuth = (state=initialState,{type,payload})=>{
@@ -9,18 +9,18 @@ const reducerAuth = (state=initialState,{type,payload})=>{
         case actionsTypesAuth.LOGIN:
             return {
                     ...state,
-                    data : payload,         
+                    user : payload,         
                 }
         case actionsTypesAuth.LOGGED:
             return {
                     ...state,
-                    data : payload,         
+                    user : payload,         
                 }
                 
         case actionsTypesAuth.LOGOUT:
             return {
                 ...state,
-                    data : payload,
+                    user : payload,
                 }
 
         default: return state;
