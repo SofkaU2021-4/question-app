@@ -8,7 +8,7 @@ const initialState={
 
 }
 
-const reducerQuestion = (state=initialState,{type,payload})=>{
+const QuestionsReducer = (state=initialState,{type,payload})=>{
     switch(type){
 
         case actionsTypesQuestions.LOADING:
@@ -33,6 +33,4 @@ const reducerQuestion = (state=initialState,{type,payload})=>{
     }
 }
 
-export default reducerQuestion
-
-
+export default QuestionsReducer

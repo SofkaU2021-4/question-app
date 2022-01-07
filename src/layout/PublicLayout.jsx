@@ -22,7 +22,7 @@ const PublicLayout = () => {
                 user.user.multiFactor.user.displayName,
                 user.user.multiFactor.user.uid,
                 user.user.multiFactor.user.photoURL))
-                navigate("/home")    
+                navigate("/private/QuestionsPage")    
         })
         .catch()
       }
@@ -35,7 +35,7 @@ useEffect(()=>{
             user.multiFactor.user.displayName,
             user.multiFactor.user.uid,
             user.multiFactor.user.photoURL))
-            navigate("/home")
+            navigate("/private/QuestionsPage")
         }
 })},[])
 

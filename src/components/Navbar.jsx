@@ -8,7 +8,7 @@ const Navbar = ({elements}) => {
            
            {
                elements.map((element,index)=>{
-                   return (<Link key={index} to={element.url}>{element.titulo}</Link>)
+                   return (<Link key={index} to={"/private/QuestionsPage"}>{element.titulo}</Link>)
                })
            }
         </div>

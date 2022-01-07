@@ -1,9 +1,9 @@
 import {useEffect} from'react'
 import { useDispatch,useSelector } from "react-redux";
-import { loadAllQuestion } from '../app/middleware/payloadQuestions';
-import Question from '../components/Question';
+import { loadAllQuestion } from '../../app/middleware/payloadQuestions';
+import QuestionPrivate from '../../components/private/QuestionsPrivate';
 
-const QuestionsPage = () => {
+const QuestionsPagePrivate = () => {
     const dispatch = useDispatch()
     const {isLoading,questions,error}=useSelector(state=>state.question)
 
@@ -15,11 +15,12 @@ const QuestionsPage = () => {
     
     return (
         <>
+            <h1>private</h1>
             {isLoading && <h1> cargando mi socio </h1>}
             {error&& <h1>{error}</h1>}
             {questions && questions.map((question)=>{
                 return(
-                    <Question key={question.id} question={question}/>
+                    <QuestionPrivate key={question.id} question={question}/>
                 )
                
             })}
@@ -27,4 +28,4 @@ const QuestionsPage = () => {
     )
 }
 
-export default QuestionsPage
+export default QuestionsPagePrivate

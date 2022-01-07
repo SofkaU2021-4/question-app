@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom"
 
-const Question = ({question}) => {  
+const OneQuestionPublic = ({question}) => {
 
     return(
-        <article className='question'>
+        <div className='question'>
             <p>{question.category}  - <small>{question.type}</small></p>
             
             {/* {onDelete && (
                 <button className="button right" onClick={() => onDelete(question.id)}>DELETE</button>
             )} */}
-            <Link to={`question/${question.id}`} className="button">
-                View Question
-            </Link>
+    
         
-        </article>
+        </div>
     )
 }
 
-export default Question
+export default OneQuestionPublic

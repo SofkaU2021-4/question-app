@@ -1,15 +1,16 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import reducerQuestion from "../reducers/QuestionsReducer";
+import reducerQuestions from "../reducers/QuestionsReducer";
+import OneQuestionReducer from "../reducers/OneQuestionReducer";
 import reducerAuth from "../reducers/AuthReducer";
 
 const rootReducer=()=>{
 
     return combineReducers(
         {
-        question:reducerQuestion,
-        auth:reducerAuth
+        question:reducerQuestions,
+        auth:reducerAuth,
+        oneQuestion:OneQuestionReducer
         }
-
     )
 }
 

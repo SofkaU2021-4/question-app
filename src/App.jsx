@@ -6,11 +6,12 @@ import {
 } from "react-router-dom";
 import PublicLayout from './layout/PublicLayout';
 import PrivateLayout from './layout/PrivateLayout';
-import HomePage from './pages/HomePage';
-import QuestionsPage from './pages/QuestionsPage';
-import QuestionPage from './pages/QuestionPage';
-
-
+import HomePage from './pages/public/HomePage';
+import QuestionsPagePrivate from './pages/private/QuestionsPagePrivate';
+import OneQuestionPagePrivate from './pages/private/OneQuestionPagePrivate';
+import OneQuestionPagePublic from './pages/public/OneQuestionPagePublic';
+import QuestionsPagePublic from './pages/public/QuestionsPagePublic';
+import CreateQuestion from './pages/private/CreateQuestion';
 
 
 
@@ -23,11 +24,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PublicLayout/>}>
-            <Route path="" element={<HomePage/>}/>   
+            <Route path="" element={<HomePage/>}/>
+            <Route path="QuestionsPage" element={<QuestionsPagePublic/>}/>
+            <Route path="Question/:id" element={<OneQuestionPagePublic/>}/>
         </Route>
-        <Route path="/home" element={<PrivateLayout/>}>
-          <Route path="questionpage" element={<QuestionsPage/>}/>
-          <Route path="questionpage/question/:id" element={<QuestionPage/>}/>
+          <Route path="/private" element={<PrivateLayout/>}>
+            <Route path="QuestionsPage" element={<QuestionsPagePrivate/>}/>
+            <Route path="Question/:id" element={<OneQuestionPagePrivate/>}/>
+            <Route path="CreateQuestion" element={<CreateQuestion/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
