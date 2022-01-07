@@ -1,4 +1,4 @@
-import './App.css';
+
 import {
   BrowserRouter,
   Routes,
@@ -20,7 +20,7 @@ function App() {
 
   return (
     
-    <div className="App">
+    <div className=" bg-slate-100 w-screen h-screen flex flex-col">
    
     <BrowserRouter>
       <Routes>

@@ -43,12 +43,12 @@ useEffect(()=>{
 
 
     return (
-        <div>
-            <button onClick={handler}> google</button>
+        <div className=" w-full h-full"> 
             <Navbar elements={publicNavbar}/>
-                <span>PublicLayout</span>
+            <span>PublicLayout</span>
             <Outlet/>
             <Footer/>
+            <button onClick={handler}> google</button>
         </div>
     )
 }

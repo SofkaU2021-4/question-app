@@ -10,12 +10,7 @@ const useFormData = (initial) => {
     const obj = {};
     fd.forEach((value, key) => {
         obj[key] = value;
-
-        if(key.includes("presupuesto")){
-            obj[key] = parseFloat(value);
-        }
         
-
     });
 
     return obj;
