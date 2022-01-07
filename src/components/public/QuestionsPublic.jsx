@@ -12,19 +12,19 @@ const QuestionsPublic = ({question}) => {
                     <div className="flex">
                             <i className="fas fa-question text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
                         <div className="card-info w-full align-center flex justify-between">
-                            <span className="font-semibold pt-3">ID </span>
+                            <span className="font-semibold pt-3">{question.question}</span>
                             <div className="edit-card pt-4 space-x-5">
                                
-                                <Link to="{`${variableCards.linkIcon}/${i._id}`} ">
-                                    <Tooltip title="editar">
-                                        <i className="fas fa-pen hover:text-blue-600 text-blue-800 fa-lg"></i>
+                                <Link to={`/Question/${question.id}`}>
+                                    <Tooltip title="Answers">
+                                        <i className="fas fa-eye hover:text-blue-600 text-blue-800 fa-lg"></i>
                                     </Tooltip>
                                 </Link>
-                                    <Link to="{`${variableCards.linkIcon}/${i._id}`}" >
+                                    <button to="{`${variableCards.linkIcon}/${i._id}`}" >
                                         <Tooltip title="editar">
                                             <i className="editIcon fas fa-pen fa-lg"></i>
                                         </Tooltip>
-                                    </Link>
+                                    </button>
                              
                                     <button  onClick={()=>{setOpenDialog(true)}}>
                                         <Tooltip title="Eliminar">

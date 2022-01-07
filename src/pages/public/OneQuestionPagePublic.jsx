@@ -17,8 +17,7 @@ const OneQuestionPagePublic = () => {
     },[])
   
     return (    
-        <>
-        <h1>public</h1>
+        <div className="max-w-5xl  mx-auto mt-5 text-center" >
         {oneQuestion&&(
         <>
         <OneQuestionPublic question={oneQuestion}/>
@@ -28,7 +27,7 @@ const OneQuestionPagePublic = () => {
                 )})}
         </>
         )}
-        </>
+        </div>
     )
 }
 
