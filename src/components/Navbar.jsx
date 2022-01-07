@@ -3,8 +3,10 @@ import {Link} from "react-router-dom"
 const Navbar = () => {
     return (
         <header className="flex flex-column w-screen">
-        <div className="flex justify-end w-screen max-w-2xl shadow-sm mx-auto">
-            <div className =" h-20 flex  items-center  ">
+            
+        <div className="flex w-screen max-w-5xl justify-between shadow-sm mx-auto">
+                <i class="fab fa-grav fa-3x text-white self-center"></i>
+            <div className =" h-20 flex  items-center justify-end ">
             <div className= " bg-white border border-gray-500 rounded-xl ">
                 <i className="fas fa-search text-gray-500 pl-4 mr-3"></i>
                 <input onChange=""  className= "outline-none w-60 h-9 rounded-xl" type="text" placeholder="...busqueda"/>
