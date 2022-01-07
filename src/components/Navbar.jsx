@@ -9,7 +9,7 @@ const Navbar = () => {
                     <i className="fab fa-grav fa-3x  text-black self-center"></i>
                 </div>
                 <div className="flex">
-                    <button className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</button>
+                    <Link to="/QuestionsPage" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</Link>
                 </div>
             {/* <div className =" h-20 flex  items-center justify-end ">
             <div className= " bg-white border border-gray-500 rounded-xl ">
