@@ -1,0 +1,41 @@
+
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+[
++src/components/public/OneQuestionPublic.jsx,5\0\50d8010aa4ba8824bfe8e6690aa62f83dd94eaaf
+Y
+)src/components/public/QuestionsPublic.jsx,7\2\727ff5da8d7933e26a9496fa4e4e6637506f3975
+Z
+*src/pages/public/OneQuestionPagePublic.jsx,0\0\00f43cf3c9adb4a5d4377d40cf5771231aedff0d
+O
+src/actions/QuestionsActions.js,7\8\78e99a501a427d390d17ed3ac5977144504e81e7
+X
+(src/pages/public/QuestionsPagePublic.jsx,2\4\24e98172437769ee237b8cbc122ffa8935b505dd
+F
+src/app/rootReducer.js,0\c\0c8c73145b69c70b1a50be0975d53b597d766b26
+L
+src/layout/PrivateLayout.jsx,5\4\54f773b5393abe09ad33e7062395b6fe1ed0817a
+]
+-src/components/private/OneQuestionPrivate.jsx,1\b\1baefc16f080e50125aebef98574b0d9bc500c50
+P
+ src/reducers/QuestionsReducer.js,d\4\d4f10cfb3d3d9b4e1113975ef989b1aeb1855636
+K
+src/reducers/AuthReducer.js,d\7\d7c880137edce10a181be7e5450ee936fb26c1f7
+`
+0src/actions/actionsTypes/ActiosTypesQuestions.js,e\8\e8ca9e263c558a21eb462ffe4d3c9b1c6fe400db
+\
+,src/actions/actionsTypes/ActionsTypesAuth.js,e\5\e55c8bfa3703ae4263563d0d5ac0e4d93a5239a3
+b
+2src/actions/actionsTypes/ActionsTypeOneQuestion.js,9\5\95666f0a97d61a2a8b88884a94406e4d448476e7
+L
+src/actions/AuthorActions.js,0\4\04617d86a6f9e505a97413aa9371c077d018b15b
+R
+"src/reducers/OneQuestionReducer.js,d\e\dee5940b8aad2d0d1b5218cc4f7995e4d849bffc
+V
+&src/app/middleware/payloadQuestions.js,d\7\d74b457bbe2d4984a17b83f429250178e1baac18
+Z
+*src/pages/private/QuestionsPagePrivate.jsx,f\5\f5fcd1c3de73aa86183fff4ca7901a65dead3bff
+\
+,src/pages/private/OneQuestionPagePrivate.jsx,1\6\161979add29ccb1040a0cd23f7a92e6f53658c5e
+Q
+!src/actions/OneQuestionActions.js,5\4\548db304767bf9965e931d34bb2dd0984114eb97

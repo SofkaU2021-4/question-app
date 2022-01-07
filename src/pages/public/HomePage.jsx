@@ -44,14 +44,14 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="link-button mt-3 ">
-                <button className=" rounded-full loginButton-login w-44 h-12 text-white  bg-black py-3.5 px-16 font-bold text-base  "  to="/dashboard">LOGIN</button>
+                <button className=" rounded-full loginButton-login  text-white   bg-black py-3.5 px-16 font-bold text-lg  "  to="/dashboard">LOGIN</button>
             </div>
             </form>
             <div className="w-full flex justify-center">
                 <button  className=" rounded-full cursor-pointer bg-gray-200 border-1 h-14 py-18 px-1 mt-7 mb-10 w-96">
                     <div className=' flex justify-center space-x-2'>
                         <img src={image} className="h-8 self-center" />
-                        <span onClick={handler} className="text-gray-500 font-semibold self-center">Ingresa con tu cuenta Google</span>
+                        <span onClick={handler} className="text-gray-500  font-semibold self-center">Ingresa con tu cuenta Google</span>
                     </div>
                 </button>
             </div>

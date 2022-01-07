@@ -34,14 +34,19 @@ useEffect(()=>{
 
 
     return (
-        <div className=" w-full h-full flex flex-col justify-between"> 
-            <Navbar elements={publicNavbar}/>
+        <div className=" bg-slate-100 min-h-screen  flex flex-col justify-between ">
+             <Navbar elements={publicNavbar}/>
+        <div className="  flex flex-col justify-center my-auto"> 
+           
         
-            <div className="w-full h-full flex flex-col justify-center">
+            <div className="">
                 <Outlet/>
+            </div>         
+            
+            </div>
+            <div>
+                <Footer/>
             </div> 
-                       
-            <Footer/>
         </div>
     )
 }

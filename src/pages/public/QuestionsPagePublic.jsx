@@ -14,8 +14,7 @@ const QuestionsPagePublic = () => {
   
     
     return (
-        <>
-            <h1>public</h1>
+        <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">
             {error&& <h1>{error}</h1>}
             {questions && questions.map((question)=>{
                 return(
@@ -23,7 +22,7 @@ const QuestionsPagePublic = () => {
                 )
                
             })}
-        </>
+        </div>
     )
 }
 

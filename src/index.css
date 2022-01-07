@@ -9,7 +9,27 @@
   .loginButton-login{
     border: 1px solid #00FFFF;
 }
+
+
 .logo{
   
   font-family: 'Rubik Mono One', sans-serif;
+}
+label{
+  font-size: 15px;
+}
+
+.input-border{
+  border-radius: 6px;
+  border: solid 1px;
+  border-color: #d7d7d7;
+}
+
+.cards-container{
+  border: 0.09px solid #E2E1E1;
+}
+
+
+td{
+  border-top: 0.374657px solid #787777;
 }

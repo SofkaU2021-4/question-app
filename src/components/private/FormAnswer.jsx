@@ -25,7 +25,6 @@ const FormAnswer = ({idQuestion}) => {
                 <button type="submit">Enviar Respuesta</button>
             </form>
         </div>
-
     )
 
 }
