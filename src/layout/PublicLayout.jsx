@@ -45,8 +45,7 @@ useEffect(()=>{
     return (
         <div className=" w-full h-full"> 
             <Navbar elements={publicNavbar}/>
-            <span>PublicLayout</span>
-            <Outlet/>
+                <Outlet/>
             <Footer/>
             <button onClick={handler}> google</button>
         </div>
