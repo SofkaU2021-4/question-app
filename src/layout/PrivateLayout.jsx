@@ -41,10 +41,10 @@ const PrivateLayout = () => {
     return (
         <>
         {state.user
-        ?(<div>
-            <button onClick={handler}>adios socio</button>
+        ?(<div className="flex flex-col justify-between w-full h-full">
             <Navbar elements={privateNavbar}/>
-            <span>PrivateLayout</span>
+            <button onClick={handler}>adios socio</button>
+                <span>PrivateLayout</span>
             <Outlet/>
             <Footer/>
         </div>)
