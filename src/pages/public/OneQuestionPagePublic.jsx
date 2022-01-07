@@ -7,28 +7,27 @@ import ViewAnswer from "../../components/private/ViewAnswer";
 
 const OneQuestionPagePublic = () => {
     const {id}=useParams();
-    console.log(id)
 
     const dispatch = useDispatch()
     const {oneQuestion} = useSelector(state => state.oneQuestion)
 
     useEffect(()=>{
       dispatch(loadById(id))
+      console.log(oneQuestion)
     },[])
   
-
-
-    return (
+    return (    
         <>
         <h1>public</h1>
-            {oneQuestion&&<OneQuestionPublic question={oneQuestion}/>}
-            {oneQuestion.answers &&  oneQuestion.answers.map((answer)=>{
+        {oneQuestion&&(
+        <>
+        <OneQuestionPublic question={oneQuestion}/>
+        {oneQuestion.answers.map((answer,index)=>{
                 return(
-                    <ViewAnswer answer={answer} ></ViewAnswer>
-                )
-                
-            })}
-            
+                    <ViewAnswer key={index} answer={answer} ></ViewAnswer>
+                )})}
+        </>
+        )}
         </>
     )
 }

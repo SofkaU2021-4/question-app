@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 const OneQuestionPrivate = ({oneQuestion}) => {
-    console.log(oneQuestion);
 
     return(
         <div className='question'>

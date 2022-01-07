@@ -1,9 +1,9 @@
 import { questionsLoading ,questionsLoadSucces,questionsLoadError } from "../../actions/QuestionsActions";
 import {oneQuestionLoadSucces , oneQuestionLoadError} from "../../actions/OneQuestionActions";
+import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError } from "../../actions/MyQuestionsActions";
 import axios from "axios";
 
-
-export const loadAllQuestion=()=>async(dispatch)=>{
+export const loadAllQuestion=()=>(dispatch)=>{
   
     dispatch(questionsLoading())
 
@@ -21,7 +21,7 @@ export const loadAllQuestion=()=>async(dispatch)=>{
 }
 
 
-export const loadById=(id)=>async(dispatch)=>{
+export const loadById=(id)=>(dispatch)=>{
 
 
     const options = {
@@ -83,16 +83,18 @@ export const deleteQuestion=(id)=>{
 }
 
 
-export const getUserQuestion=(userId)=>{
+export const getUserQuestion=(userId)=>(dispatch)=>{
+
+    dispatch(myQuestionsLoading())
+
     const options = {
         method: 'GET',
         url: `http://localhost:8080/getOwnerAll/${userId}`,
         headers: {'Content-Type': 'application/json'}
       };
-      
       axios.request(options).then(function (response) {
-        console.log(response.data);
+        dispatch(myQuestionsLoadSucces(response.data));
       }).catch(function (error) {
-        console.error(error);
+        dispatch(myQuestionsLoadError(error.message));
       });
 }

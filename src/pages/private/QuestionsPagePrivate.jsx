@@ -16,7 +16,6 @@ const QuestionsPagePrivate = () => {
     return (
         <>
             <h1>private</h1>
-            {isLoading && <h1> cargando mi socio </h1>}
             {error&& <h1>{error}</h1>}
             {questions && questions.map((question)=>{
                 return(

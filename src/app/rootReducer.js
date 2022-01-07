@@ -2,6 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import reducerQuestions from "../reducers/QuestionsReducer";
 import OneQuestionReducer from "../reducers/OneQuestionReducer";
 import reducerAuth from "../reducers/AuthReducer";
+import myQuestionReducer from "../reducers/MyQuestionsReducer";
 
 const rootReducer=()=>{
 
@@ -9,7 +10,8 @@ const rootReducer=()=>{
         {
         question:reducerQuestions,
         auth:reducerAuth,
-        oneQuestion:OneQuestionReducer
+        oneQuestion:OneQuestionReducer,
+        myQuestion:myQuestionReducer
         }
     )
 }

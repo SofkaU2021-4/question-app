@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const QuestionsPrivate = ({question}) => {  
+const QuestionsPublic = ({question}) => {  
 
     return(
         <div className='question'>
@@ -17,4 +17,4 @@ const QuestionsPrivate = ({question}) => {
     )
 }
 
-export default QuestionsPrivate
+export default QuestionsPublic

@@ -8,7 +8,7 @@ import ViewAnswer from "../../components/private/ViewAnswer";
 
 const OneQuestionPagePrivate = () => {
     const {id}=useParams();
-    //console.log(id)
+    
 
     const dispatch = useDispatch()
     const {oneQuestion} = useSelector(state => state.oneQuestion)
@@ -16,7 +16,7 @@ const OneQuestionPagePrivate = () => {
     useEffect(()=>{
       dispatch(loadById(id))
     },[])
-
+    console.log("aparece ", oneQuestion);
 
     return (
         <>  
