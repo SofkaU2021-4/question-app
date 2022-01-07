@@ -7,6 +7,7 @@ const Navbar = () => {
         <div className="flex w-screen  max-w-5xl justify-between  mx-auto">
                 <div className="flex">
                     <i className="fab fa-grav fa-3x  text-black self-center"></i>
+                    <span className="logo text-3xl text-black self-center ml-2 font-bold">SofkAsk</span>
                 </div>
                 <div className="flex">
                     <Link to="/QuestionsPage" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</Link>

@@ -11,6 +11,8 @@ const HomePage = () => {
     const dispatch = useDispatch()
     const navigate=useNavigate()
 
+
+
     const handler=()=>{
         app.auth().signInWithPopup(google)
         .then(user =>{
@@ -22,10 +24,13 @@ const HomePage = () => {
         })
         .catch()
       }
+
+
+
     return (
             <div className="flex flex-col w-full max-w-5xl  justify-center   mx-auto">
                 <form className=" container-login w-full h-full flex flex-col justify-center items-center text-white ">
-            <div className="logo text-7xl text-black mt-3">Ingreso</div>
+            <div className="logo text-7xl text-black mt-3">Ingresa</div>
             <div>
                 <div className=" bg-white border-solid border-1 p-1 mt-14 w-96">
                     <i className="fas fa-envelope text-gray-400 pl-4 "></i>
