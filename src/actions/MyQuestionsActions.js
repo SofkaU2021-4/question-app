@@ -12,6 +12,12 @@ export const myQuestionsLoadSucces=(questions)=>{
         payload:questions
     }
 }
+export const myQuestionsDelete=(id)=>{
+    return {
+        type:actionsTypesMyQuestion.DELETE_SUCCESS,
+        payload:id
+    }
+}
 
 export const myQuestionsLoadError=(error)=>{
     return {

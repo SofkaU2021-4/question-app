@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
 import { Dialog,Tooltip } from '@material-ui/core';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const QuestionsPublic = ({question}) => {  
+    const navigate = useNavigate();
     const [openDialog,setOpenDialog]=useState(false)
 
-    return(
-            <button key={question.id} to={`/private/question/${question.id}`}>
+    return(<div className="flex it">
+            <button className="w-full" key={question.id} onClick={()=>navigate(`/question/${question.id}`)}>
                 <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100  ">
                 <div className="mx-6 mb-5">
                     <div className="flex">
@@ -15,22 +17,6 @@ const QuestionsPublic = ({question}) => {
                             <span className="font-semibold pt-3">{question.question}</span>
                             <div className="edit-card pt-4 space-x-5">
                                
-                                <Link to={`/Question/${question.id}`}>
-                                    <Tooltip title="Answers">
-                                        <i className="fas fa-eye hover:text-blue-600 text-blue-800 fa-lg"></i>
-                                    </Tooltip>
-                                </Link>
-                                    <button to="{`${variableCards.linkIcon}/${i._id}`}" >
-                                        <Tooltip title="editar">
-                                            <i className="editIcon fas fa-pen fa-lg"></i>
-                                        </Tooltip>
-                                    </button>
-                             
-                                    <button  onClick={()=>{setOpenDialog(true)}}>
-                                        <Tooltip title="Eliminar">
-                                        <i className="deleteIcon fas fa-trash fa-lg"></i>
-                                        </Tooltip>
-                                    </button>
                             </div>
                         </div>
                     </div>
@@ -48,6 +34,8 @@ const QuestionsPublic = ({question}) => {
            
 
             </button>
+        </div>
+                
 
     )
 }

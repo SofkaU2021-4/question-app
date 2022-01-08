@@ -1,6 +1,7 @@
 import { questionsLoading ,questionsLoadSucces,questionsLoadError } from "../../actions/QuestionsActions";
 import {oneQuestionLoadSucces , oneQuestionLoadError} from "../../actions/OneQuestionActions";
-import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError } from "../../actions/MyQuestionsActions";
+import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuestionsDelete } from "../../actions/MyQuestionsActions";
+import {loginAction} from "../../actions/AuthorActions"
 import axios from "axios";
 
 export const loadAllQuestion=()=>(dispatch)=>{
@@ -38,7 +39,7 @@ export const loadById=(id)=>(dispatch)=>{
 }
 
 
-export const postQuestion=(question)=>{
+export const postQuestion=(question,navigate)=>{
 
     const options = {
         method: 'POST',
@@ -48,35 +49,36 @@ export const postQuestion=(question)=>{
       };
       
       axios.request(options).then(function (response) {
-        console.log(response.data);
+         navigate("/QuestionsPage")
       }).catch(function (error) {
         console.error(error);
       });
 }
 
 
-export const postAnswer=(answer)=>{
+export const postAnswer=(answer)=>(dispatch)=>{
 
-    const options = {
-        method: 'POST',
-        url: 'http://localhost:8080/add',
-        headers: {'Content-Type': 'application/json'},
-        data: answer
-      };
-      
-      axios.request(options).then(function (response) {
-        console.log(response.data);
-      }).catch(function (error) {
-        console.error(error);
-      });
+  const options = {
+      method: 'POST',
+      url: 'http://localhost:8080/add',
+      headers: {'Content-Type': 'application/json'},
+      data: answer
+    };
+    
+    axios.request(options).then(function (response) {
+      dispatch(oneQuestionLoadSucces(response.data))
+    }).catch(function (error) {
+      console.error(error);
+    });
 }
 
 
-export const deleteQuestion=(id)=>{
+export const deleteQuestion=(id)=>(dispatch)=>{
+  
     const options = {method: 'DELETE', url: `http://localhost:8080/delete/${id}`};
 
         axios.request(options).then(function (response) {
-        console.log(response.data);
+          dispatch(myQuestionsDelete(id))
         }).catch(function (error) {
         console.error(error);
         });
@@ -98,3 +100,37 @@ export const getUserQuestion=(userId)=>(dispatch)=>{
         dispatch(myQuestionsLoadError(error.message));
       });
 }
+
+export const postUser=(email,uid,url,name)=> async(dispatch)=>{
+
+  const options = {
+    method: 'POST',
+    url: 'http://localhost:8080/createUser',
+    headers: {'Content-Type': 'application/json'},
+    data: {uid:uid, email:email, pictureUrl: url, name:name }
+  };
+  
+  await axios.request(options).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+    console.error(error);
+  });
+}
+
+
+export const getUser=(uid)=> async(dispatch)=>{
+
+  const options = {
+    method: 'GET',
+    url: `http://localhost:8080/getUser/${uid}`,
+    headers: {'Content-Type': 'application/json'},
+  };
+  
+  axios.request(options).then(function (response) {
+    dispatch(response.data.email,response.data.name,response.data.uid,response.data.photo);
+  }).catch(function (error) {
+    console.error(error);
+  });
+}
+
+

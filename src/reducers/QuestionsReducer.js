@@ -28,6 +28,7 @@ const QuestionsReducer = (state=initialState,{type,payload})=>{
                 isLoading:false,
                 error:payload
                 }
+                
 
         default: return state;
     }

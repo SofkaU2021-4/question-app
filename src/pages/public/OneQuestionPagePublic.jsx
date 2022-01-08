@@ -16,18 +16,25 @@ const OneQuestionPagePublic = () => {
       console.log(oneQuestion)
     },[])
   
-    return (    
-        <div className="max-w-5xl  mx-auto mt-5 text-center" >
-        {oneQuestion&&(
-        <>
-        <OneQuestionPublic question={oneQuestion}/>
-        {oneQuestion.answers.map((answer,index)=>{
-                return(
-                    <ViewAnswer key={index} answer={answer} ></ViewAnswer>
+    return (
+        <div className="">
+            <div className="max-w-5xl  mx-auto mt-5 flex flex-col justify-start h-full" >
+            {oneQuestion&&(
+            <>
+                <OneQuestionPublic question={oneQuestion}/>
+                <span> Respuestas {oneQuestion.answers.length}</span>
+            <div className="mt-10">
+            
+                {oneQuestion.answers.map((answer,index)=>{
+                    return(
+                        <ViewAnswer key={index} answer={answer} ></ViewAnswer>
                 )})}
-        </>
-        )}
-        </div>
+            </div>
+            </>
+            )}
+            
+            </div>
+        </div>    
     )
 }
 

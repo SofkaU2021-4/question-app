@@ -41,13 +41,20 @@ const PrivateLayout = () => {
     return (
         <>
         {state.user
-        ?(<div className="flex flex-col justify-between w-full h-full">
+        ?(
+        <main className=" bg-slate-100 w-full h-full flex flex-col">
             <Navbar elements={privateNavbar}/>
             <button onClick={handler}>adios socio</button>
-                <span>PrivateLayout</span>
-            <Outlet/>
-            <Footer/>
-        </div>)
+            <div className="  flex flex-col justify-center my-auto"> 
+                <div className="">
+                    <Outlet/>
+                </div>         
+        
+            </div>
+                <Footer/>
+        
+            </main>
+        )
         :
         null}
         </>

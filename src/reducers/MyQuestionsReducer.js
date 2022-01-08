@@ -26,6 +26,14 @@ const myQuestionReducer = (state=initialState, {type,payload})=>{
                 isLoading:false,
                 error:payload
                 }
+        case actionsTypesMyQuestion.DELETE_SUCCESS:
+
+                return {
+                    ...state,
+                    isLoading:false,
+                    error:null,
+                    myQuestions:state.myQuestions.filter(question=>question.id!==payload)
+                }
 
         default: return state;
     }

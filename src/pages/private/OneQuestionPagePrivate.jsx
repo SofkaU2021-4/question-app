@@ -19,7 +19,7 @@ const OneQuestionPagePrivate = () => {
     console.log("aparece ", oneQuestion);
 
     return (
-        <>  
+        <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">  
             <h1>private</h1>
             {oneQuestion && 
             <>
@@ -33,7 +33,7 @@ const OneQuestionPagePrivate = () => {
             </>     
             }
             
-        </>
+        </div>
     )
 }
 
