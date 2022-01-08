@@ -8,6 +8,7 @@ const QuestionsPagePrivate = () => {
     const {isLoading,questions,error}=useSelector(state=>state.question)
 
 
+
     useEffect(()=>{
       dispatch(loadAllQuestion())
     },[])

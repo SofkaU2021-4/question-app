@@ -12,10 +12,7 @@ import { useState } from 'react';
 const HomePage = () => {
 
     const [registro,setRegistro]=useState(false)
-   
-
-
-    const{form, formData, updateFormData} = useFormData();
+    const {form, formData, updateFormData} = useFormData();
     const dispatch = useDispatch()
     const navigate=useNavigate()
 
@@ -38,7 +35,6 @@ const HomePage = () => {
     
       }
 
-
     const handler=()=>{
     
             app.auth().signInWithPopup(google)
@@ -54,8 +50,6 @@ const HomePage = () => {
                     navigate("/private/QuestionsPage")    
             })
       }
-
-
 
     return (
         <div className="flex flex-col">

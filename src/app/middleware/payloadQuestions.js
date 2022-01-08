@@ -126,8 +126,8 @@ export const getUser=(uid)=> async(dispatch)=>{
     headers: {'Content-Type': 'application/json'},
   };
   
-  axios.request(options).then(function (response) {
-    dispatch(response.data.email,response.data.name,response.data.uid,response.data.photo);
+  await axios.request(options).then(function (response) {
+    dispatch(loginAction(response.data.email,response.data.name,response.data.uid,response.data.photo));
   }).catch(function (error) {
     console.error(error);
   });

@@ -6,7 +6,8 @@ import { app } from "../service/firebase"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import {  useDispatch ,useSelector  } from "react-redux"
-import {loggedAction,logoutAction} from "../actions/AuthorActions"
+import {logoutAction} from "../actions/AuthorActions"
+import { getUser } from "../app/middleware/payloadQuestions"
 
 
 
@@ -26,10 +27,7 @@ const PrivateLayout = () => {
     useEffect(()=>{
         app.auth().onAuthStateChanged((user)=>{
             if(user){
-                dispatch(loggedAction(user.multiFactor.user.email , 
-                    user.multiFactor.user.displayName,
-                    user.multiFactor.user.uid,
-                    user.multiFactor.user.photoURL))
+                dispatch(getUser(user.multiFactor.user.uid))
                 }else{
                     navigate("/")
                 }
