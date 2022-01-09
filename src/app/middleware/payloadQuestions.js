@@ -4,13 +4,15 @@ import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuest
 import {loginAction} from "../../actions/AuthorActions"
 import axios from "axios";
 
+const urlBase="https://shielded-sands-02777.herokuapp.com"
+
 export const loadAllQuestion=()=>(dispatch)=>{
   
     dispatch(questionsLoading())
 
     const options = {
     method: 'GET',
-    url: 'http://localhost:8080/getAll',
+    url: `${urlBase}/getAll`,
     headers: {'Content-Type': 'application/json'}
     };
 
@@ -27,7 +29,7 @@ export const loadById=(id)=>(dispatch)=>{
 
     const options = {
         method: 'GET',
-        url: `http://localhost:8080/get/${id}`,
+        url: `${urlBase}/get/${id}`,
         headers: {'Content-Type': 'application/json'}
         };
     
@@ -43,7 +45,7 @@ export const postQuestion=(question,navigate)=>{
 
     const options = {
         method: 'POST',
-        url: 'http://localhost:8080/create',
+        url: `${urlBase}/create`,
         headers: {'Content-Type': 'application/json'},
         data: question
       };
@@ -60,7 +62,7 @@ export const postAnswer=(userId,questionId,data)=>(dispatch)=>{
 
   const options = {
       method: 'POST',
-      url: 'http://localhost:8080/add',
+      url: `${urlBase}/add`,
       headers: {'Content-Type': 'application/json'},
       data: {userId:userId , questionId:questionId,answer:data}
     };
@@ -75,7 +77,7 @@ export const postAnswer=(userId,questionId,data)=>(dispatch)=>{
 
 export const deleteQuestion=(id)=>(dispatch)=>{
   
-    const options = {method: 'DELETE', url: `http://localhost:8080/delete/${id}`};
+    const options = {method: 'DELETE', url: `${urlBase}/delete/${id}`};
 
         axios.request(options).then(function (response) {
           dispatch(myQuestionsDelete(id))
@@ -91,7 +93,7 @@ export const getUserQuestion=(userId)=>(dispatch)=>{
 
     const options = {
         method: 'GET',
-        url: `http://localhost:8080/getOwnerAll/${userId}`,
+        url: `${urlBase}/getOwnerAll/${userId}`,
         headers: {'Content-Type': 'application/json'}
       };
       axios.request(options).then(function (response) {
@@ -105,7 +107,7 @@ export const postUser=(email,uid,url,name)=> async(dispatch)=>{
 
   const options = {
     method: 'POST',
-    url: 'http://localhost:8080/createUser',
+    url: `${urlBase}/createUser`,
     headers: {'Content-Type': 'application/json'},
     data: {uid:uid, email:email, pictureUrl: url, name:name }
   };
@@ -122,12 +124,12 @@ export const getUser=(uid)=> async(dispatch)=>{
 
   const options = {
     method: 'GET',
-    url: `http://localhost:8080/getUser/${uid}`,
+    url: `${urlBase}/getUser/${uid}`,
     headers: {'Content-Type': 'application/json'},
   };
   
   await axios.request(options).then(function (response) {
-    dispatch(loginAction(response.data.email,response.data.name,response.data.uid,response.data.photo));
+    dispatch(loginAction(response.data.email,response.data.name,response.data.uid,response.data.pictureUrl));
   }).catch(function (error) {
     console.error(error);
   });

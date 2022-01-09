@@ -2,7 +2,7 @@ import { postAnswer } from '../../app/middleware/payloadQuestions';
 import { useSelector,useDispatch  } from 'react-redux';
 import '../../../node_modules/react-quill/dist/quill.snow.css';
 import ReactQuill from "react-quill"
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 
 const FormAnswer = ({idQuestion}) => {
     const[data,setData]=useState("")

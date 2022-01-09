@@ -9,11 +9,12 @@ const QuestionsPrivate = ({question}) => {
     return(<div className="flex">
             <button className="w-full" key={question.id} onClick={()=>navigate(`/private/question/${question.id}`)}>
                 <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100  ">
-                <div className="mx-6 mb-5">
+                <div className=" px-3 my-3">
                     <div className="flex">
-                            <i className="fas fa-question text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
-                        <div className="card-info w-full align-center flex justify-between">
-                            <span className="font-semibold pt-3">{question.question}</span>
+                        <img src={question.userDTO.pictureUrl} class="h-8 self-center" />
+                        <spa className="">{question.userDTO.name}</spa>
+                        <div className="card-info w-full align-center flex justify-around">
+                            <span className="font-semibold self-center  ">{question.question}</span>
                             <div className="edit-card pt-4 space-x-5">
                             
                             </div>

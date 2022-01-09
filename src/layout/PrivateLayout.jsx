@@ -21,7 +21,6 @@ const PrivateLayout = () => {
     const handler=()=>{
         app.auth().signOut()
         dispatch(logoutAction())
-        navigate("/")
     }
 
     useEffect(()=>{

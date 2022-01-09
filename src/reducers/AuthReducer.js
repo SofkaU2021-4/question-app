@@ -20,7 +20,7 @@ const reducerAuth = (state=initialState,{type,payload})=>{
         case actionsTypesAuth.LOGOUT:
             return {
                 ...state,
-                    user : payload,
+                    user : null,
                 }
 
         default: return state;

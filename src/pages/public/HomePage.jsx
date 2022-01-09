@@ -39,11 +39,8 @@ const HomePage = () => {
     
             app.auth().signInWithPopup(google)
             .then(user =>{
-                 dispatch(loginAction(user.user.multiFactor.user.email , 
-                    user.user.multiFactor.user.displayName,
-                    user.user.multiFactor.user.uid,
-                    user.user.multiFactor.user.photoURL))
-                    dispatch(postUser(user.user.multiFactor.user.email , 
+                 dispatch(getUser(user.user.multiFactor.user.uid))
+                 dispatch(postUser(user.user.multiFactor.user.email , 
                     user.user.multiFactor.user.uid,
                     user.user.multiFactor.user.photoURL,
                     user.user.multiFactor.user.displayName))
