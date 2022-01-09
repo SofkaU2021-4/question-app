@@ -56,13 +56,13 @@ export const postQuestion=(question,navigate)=>{
 }
 
 
-export const postAnswer=(answer)=>(dispatch)=>{
+export const postAnswer=(userId,questionId,data)=>(dispatch)=>{
 
   const options = {
       method: 'POST',
       url: 'http://localhost:8080/add',
       headers: {'Content-Type': 'application/json'},
-      data: answer
+      data: {userId:userId , questionId:questionId,answer:data}
     };
     
     axios.request(options).then(function (response) {

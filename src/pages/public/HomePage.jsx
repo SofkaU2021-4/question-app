@@ -30,7 +30,7 @@ const HomePage = () => {
         }else{
             app.auth().signInWithEmailAndPassword(formData.email,formData.pass)
             .then(user=>dispatch(getUser(user.user.multiFactor.user.uid)))
-            .catch(error=>console.log("usuario no existe o contraseña erronea"))
+            .catch(()=>console.log("usuario no existe o contraseña erronea"))
         }
     
       }

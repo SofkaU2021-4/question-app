@@ -46,6 +46,10 @@ label{
 td{
   border-top: 0.374657px solid #787777;
 }
-
+.quill-editor {
+  width: 850px;
+  margin: auto;
+  margin-top: 20px;
+}
 
 
