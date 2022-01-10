@@ -16,7 +16,6 @@ const QuestionsPagePrivate = () => {
     
     return (
         <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">
-            <h1>private</h1>
             {error&& <h1>{error}</h1>}
             {questions && questions.map((question)=>{
                 return(

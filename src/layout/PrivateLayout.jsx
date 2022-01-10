@@ -6,7 +6,6 @@ import { app } from "../service/firebase"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import {  useDispatch ,useSelector  } from "react-redux"
-import {logoutAction} from "../actions/AuthorActions"
 import { getUser } from "../app/middleware/payloadQuestions"
 
 
@@ -18,10 +17,7 @@ const PrivateLayout = () => {
     const dispatch = useDispatch()
     const navigate=useNavigate()
 
-    const handler=()=>{
-        app.auth().signOut()
-        dispatch(logoutAction())
-    }
+  
 
     useEffect(()=>{
         app.auth().onAuthStateChanged((user)=>{
@@ -41,9 +37,9 @@ const PrivateLayout = () => {
         ?(
         <main className=" bg-slate-100 w-full h-full flex flex-col ">
             <Navbar elements={privateNavbar}/>
-            <button onClick={handler}>adios socio</button>
-            <div className="  flex flex-col justify-center my-auto"> 
-                <div className="">
+        
+            <div className="  flex flex-col justify-center my-auto w-full h-full"> 
+                <div className="w-full h-full">
                     <Outlet/>
                 </div>         
         

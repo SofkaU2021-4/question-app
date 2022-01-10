@@ -37,10 +37,10 @@ useEffect(()=>{
         <>
             <main className=" bg-slate-100 w-full h-full flex flex-col">
                 <Navbar elements={publicNavbar}/>
-            <div className="  flex flex-col justify-center my-auto"> 
+            <div className="  flex flex-col justify-center my-auto w-full h-full"> 
             
             
-                <div className="">
+                <div className="w-full h-full">
                     <Outlet/>
                 </div>         
                 

@@ -1,4 +1,4 @@
-import { questionsLoading ,questionsLoadSucces,questionsLoadError } from "../../actions/QuestionsActions";
+import { questionsLoading ,questionsLoadSucces,questionsLoadError ,deleteQuestionLoad } from "../../actions/QuestionsActions";
 import {oneQuestionLoadSucces , oneQuestionLoadError} from "../../actions/OneQuestionActions";
 import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuestionsDelete } from "../../actions/MyQuestionsActions";
 import {loginAction} from "../../actions/AuthorActions"
@@ -80,7 +80,7 @@ export const deleteQuestion=(id)=>(dispatch)=>{
     const options = {method: 'DELETE', url: `${urlBase}/delete/${id}`};
 
         axios.request(options).then(function (response) {
-          dispatch(myQuestionsDelete(id))
+          dispatch(loadAllQuestion())
         }).catch(function (error) {
         console.error(error);
         });

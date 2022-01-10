@@ -20,3 +20,10 @@ export const questionsLoadError=(error)=>{
         payload:error
     }
 }
+
+export const deleteQuestionLoad=(question)=>{
+    return {
+        type:actionsTypesQuestions.DELETE_SUCCESS_QUESTION,
+        payload:question
+    }
+}

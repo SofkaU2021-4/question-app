@@ -20,7 +20,6 @@ const OneQuestionPagePrivate = () => {
 
     return (
         <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">  
-            <h1>private</h1>
             {oneQuestion && 
             <>
                  <OneQuestionPrivate oneQuestion={oneQuestion}/>
