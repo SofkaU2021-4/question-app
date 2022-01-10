@@ -27,6 +27,9 @@ const Navbar = () => {
                     <div className="flex">
                         <Link to="/private/CreateQuestion" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">Crea una pregunta</Link>
                     </div>
+                    <div className="flex">
+                        <Link to="/private/MyQuestions" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">Mis Preguntas</Link>
+                    </div>
 
                     <div className="flex">
                         <ModalPerfil user={user}></ModalPerfil>

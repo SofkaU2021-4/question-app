@@ -4,7 +4,8 @@ import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuest
 import {loginAction} from "../../actions/AuthorActions"
 import axios from "axios";
 
-const urlBase="https://shielded-sands-02777.herokuapp.com/"
+const urlBase="http://localhost:8080"
+//https://shielded-sands-02777.herokuapp.com
 
 export const loadAllQuestion=()=>(dispatch)=>{
   

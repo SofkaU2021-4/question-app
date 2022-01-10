@@ -51,16 +51,10 @@ const ModalPerfil = ({user}) => {
 <>
     {user?(
       <>
-         <div >
-      
-      <div onClick={handleClickOpen('paper')} className="cursor-pointer text-white  items-center  text-sm rounded-3xl sidebar-route-disable flex w-full">
-                 <div className="self-center">
-                        <button  className="mt-2 text-white shadow-md self-center font-bold border px-6 rounded-full pb-2 pt-2 bg-pink-700 ">Mi Perfil</button>
-                    </div>
-      </div>
-      
-
-  
+         <div className="flex" >
+                
+          <button onClick={handleClickOpen('paper')}   className=" flex text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">Mi Perfil</button>
+    
         <Dialog
           className= "bg-black bg-opacity-50"
           open={open}

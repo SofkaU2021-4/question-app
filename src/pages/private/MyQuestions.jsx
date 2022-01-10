@@ -20,7 +20,7 @@ const MyQuestions = () => {
     },[])
 
     return (
-        <>
+        <div className="flex flex-col max-w-5xl  mx-auto mt-5 ">
         {myQuestions && myQuestions.map((question)=>{
             return(
                 <QuestionsPrivate key={question.id} question={question}/>
@@ -32,7 +32,7 @@ const MyQuestions = () => {
         
             {error && <h1> Error {error} </h1>}
 
-        </>
+        </div>
     )
 }
 
