@@ -8,9 +8,15 @@ export const oneQuestionLoadSucces=(question)=>{
     }
 }
 
-export const oneQuestionLoadError=(error)=>{
+export const oneQuestionLoading=(error)=>{
+    return {
+        type:ActionsTypeOneQuestion.LOADING_SUCCESS_QUESTION,
+        payload:error
+    }
+}
+
+export const oneQuestionLoadError=()=>{
     return {
         type:ActionsTypeOneQuestion.LOAD_FAILURE_QUESTION,
-        payload:error
     }
 }

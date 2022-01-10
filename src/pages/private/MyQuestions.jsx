@@ -21,7 +21,8 @@ const MyQuestions = () => {
 
     return (
         <div className="flex flex-col max-w-5xl  mx-auto mt-5 ">
-        {myQuestions && myQuestions.map((question)=>{
+        {isLoading&& null}
+        {myQuestions && !isLoading && myQuestions.map((question)=>{
             return(
                 <QuestionsPrivate key={question.id} question={question}/>
                 )

@@ -1,5 +1,5 @@
 import { questionsLoading ,questionsLoadSucces,questionsLoadError ,deleteQuestionLoad } from "../../actions/QuestionsActions";
-import {oneQuestionLoadSucces , oneQuestionLoadError} from "../../actions/OneQuestionActions";
+import {oneQuestionLoadSucces , oneQuestionLoadError , oneQuestionLoading} from "../../actions/OneQuestionActions";
 import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuestionsDelete } from "../../actions/MyQuestionsActions";
 import {loginAction} from "../../actions/AuthorActions"
 import axios from "axios";
@@ -26,8 +26,7 @@ export const loadAllQuestion=()=>(dispatch)=>{
 
 
 export const loadById=(id)=>(dispatch)=>{
-
-
+    dispatch(oneQuestionLoading())
     const options = {
         method: 'GET',
         url: `${urlBase}/get/${id}`,

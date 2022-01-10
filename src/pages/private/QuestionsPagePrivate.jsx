@@ -16,8 +16,9 @@ const QuestionsPagePrivate = () => {
     
     return (
         <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">
+            {isLoading && null}
             {error&& <h1>{error}</h1>}
-            {questions && questions.map((question)=>{
+            {questions && !isLoading && questions.map((question)=>{
                 return(
                     <QuestionPrivate key={question.id} question={question}/>
                 )

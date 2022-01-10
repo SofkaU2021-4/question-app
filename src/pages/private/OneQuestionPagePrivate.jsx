@@ -11,7 +11,7 @@ const OneQuestionPagePrivate = () => {
     
 
     const dispatch = useDispatch()
-    const {oneQuestion} = useSelector(state => state.oneQuestion)
+    const {oneQuestion,isLoading} = useSelector(state => state.oneQuestion)
 
     useEffect(()=>{
       dispatch(loadById(id))
@@ -19,8 +19,9 @@ const OneQuestionPagePrivate = () => {
 
     return (
     
-        <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">  
-            {oneQuestion && 
+        <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">
+            {isLoading && null  }  
+            {oneQuestion && !isLoading && 
             <>  
 
                  <OneQuestionPrivate oneQuestion={oneQuestion}/>

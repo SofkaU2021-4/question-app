@@ -21,7 +21,7 @@ const Navbar = () => {
                     <span className="logo text-3xl text-black self-center ml-2 font-bold">SofkAsk</span>
                 </div>
                 <div className="flex justify-center">
-                    <Link to="/QuestionsPage" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</Link>
+                    <Link to="/private/QuestionsPage" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</Link>
                     {user?(
                 <div className="flex">
                     <div className="flex">
@@ -38,7 +38,7 @@ const Navbar = () => {
                  </div>
             ):null }
                 </div>
-         
+                        
         </div>
     </div>
     )
