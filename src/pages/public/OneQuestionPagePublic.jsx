@@ -13,10 +13,10 @@ const OneQuestionPagePublic = () => {
 
     useEffect(()=>{
       dispatch(loadById(id))
-      console.log(oneQuestion)
     },[])
   
     return (
+       
         <div className="">
             <div className="max-w-5xl  mx-auto mt-5 flex flex-col justify-start h-full" >
             {oneQuestion&&(
@@ -34,7 +34,10 @@ const OneQuestionPagePublic = () => {
             )}
             
             </div>
-        </div>    
+            
+        </div> 
+      
+         
     )
 }
 

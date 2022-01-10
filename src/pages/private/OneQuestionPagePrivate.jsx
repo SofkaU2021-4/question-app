@@ -16,23 +16,30 @@ const OneQuestionPagePrivate = () => {
     useEffect(()=>{
       dispatch(loadById(id))
     },[])
-    console.log("aparece ", oneQuestion);
 
     return (
+    
         <div className=" flex flex-col max-w-5xl  mx-auto mt-5 ">  
             {oneQuestion && 
-            <>
+            <>  
+
                  <OneQuestionPrivate oneQuestion={oneQuestion}/>
+                 <span className="mt-8"> Respuestas {oneQuestion.answers.length}</span>
+                 <div className=" mt-2">
                  {oneQuestion.answers&&oneQuestion.answers.map((answer)=>{
                      return(
+                         
                          <ViewAnswer key={answer.id} answer={answer} />
                      )
                  }) }
+                 </div>
                  <FormAnswer idQuestion={oneQuestion.id}></FormAnswer>
             </>     
             }
-            
+                
         </div>
+    
+        
     )
 }
 

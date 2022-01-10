@@ -35,17 +35,18 @@ const PrivateLayout = () => {
         <>
         {state.user
         ?(
-        <main className=" bg-slate-100 w-full h-full flex flex-col ">
+        <main className=" bg-slate-200 w-full h-full flex flex-col ">
             <Navbar elements={privateNavbar}/>
         
-            <div className="  flex flex-col justify-center my-auto w-full h-full"> 
+            <div className="  flex flex-col justify-center my-auto w-full h-full overflow-y-auto"> 
                 <div className="w-full h-full">
                     <Outlet/>
-                </div>         
+                </div>
+                         
         
             </div>
-                <Footer/>
-        
+               
+            <Footer/> 
             </main>
         )
         :

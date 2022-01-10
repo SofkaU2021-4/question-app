@@ -53,9 +53,9 @@ const ModalPerfil = ({user}) => {
       <>
          <div >
       
-      <div onClick={handleClickOpen('paper')} className="cursor-pointer text-white  items-center  text-sm rounded-3xl sidebar-route-disable flex">
+      <div onClick={handleClickOpen('paper')} className="cursor-pointer text-white  items-center  text-sm rounded-3xl sidebar-route-disable flex w-full">
                  <div className="self-center">
-                        <button  className="mt-2 text-white shadow-md self-center font-bold border px-6 rounded-full pb-2 pt-1 bg-pink-700 ">Mi Perfil</button>
+                        <button  className="mt-2 text-white shadow-md self-center font-bold border px-6 rounded-full pb-2 pt-2 bg-pink-700 ">Mi Perfil</button>
                     </div>
       </div>
       
