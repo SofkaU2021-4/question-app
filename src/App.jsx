@@ -14,16 +14,17 @@ import OneQuestionPagePublic from './pages/public/OneQuestionPagePublic';
 import QuestionsPagePublic from './pages/public/QuestionsPagePublic';
 import CreateQuestion from './pages/private/CreateQuestion';
 import MyQuestions from './pages/private/MyQuestions';
-import Footer from './components/Footer';
+
 
 
 
 function App() {
 
+
   return (
 
     
-    <div className="template bg-slate-100 flex">
+    <div className="template bg-slate-100 flex ">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PublicLayout/>}>

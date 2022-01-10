@@ -39,7 +39,7 @@ const PrivateLayout = () => {
         <>
         {state.user
         ?(
-        <main className=" bg-slate-100 w-full h-full flex flex-col">
+        <main className=" bg-slate-100 w-full h-full flex flex-col ">
             <Navbar elements={privateNavbar}/>
             <button onClick={handler}>adios socio</button>
             <div className="  flex flex-col justify-center my-auto"> 

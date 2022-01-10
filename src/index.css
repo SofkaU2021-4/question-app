@@ -53,3 +53,92 @@ td{
 }
 
 
+.id-perfil{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.nombre-perfil{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.rol-perfil{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.input-perfil{
+  background-color: rgb(244, 244, 244);
+}
+
+.filled-button-perfil{
+  font-size: 12px;
+  background-color: #A5143A;
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.filled-button-perfil:hover{
+  background-color: #c91c4a;
+  box-shadow: 0px 0px 2px rgba(33, 33, 33, 0.5)
+}
+
+.outlined-button-perfil{
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid;
+  border-color: #A5143A;
+  color: #A5143A;
+  border-radius: 6px;
+}
+
+.outlined-button-perfil:hover{
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid;
+  border-color: #A5143A;
+  background-color: #ae123c22;
+  color: #A5143A;
+  border-radius: 6px;
+}
+
+.tabs-perfil-active{
+  font-size: 15px;
+  color: #A5143A;
+  font-weight: 500;
+  padding: 6px;
+  border-bottom: 2px solid ;
+}
+
+.tabs-perfil-disable{
+  font-size: 15px;
+  color: #d0d0d0;
+  font-weight: 500;
+  padding: 6px;
+  border-bottom: 2px solid white;
+}
+
+.tabs-perfil-active:hover {
+  color: #A5143A;
+  font-weight: 500;
+  border-bottom: 2px solid ;
+  padding: 6px;
+}
+
+.tabs-perfil-disable:hover{
+  font-size: 15px;
+  color: #A5143A;
+  font-weight: 500;
+  padding: 6px;
+  border-bottom: 2px solid ;
+}
+
+
+.texto-perfil{
+  font-size:13px;
+  font-weight: 300;
+}
+
+

@@ -4,7 +4,7 @@ import { myQuestionsLoadSucces, myQuestionsLoading,myQuestionsLoadError, myQuest
 import {loginAction} from "../../actions/AuthorActions"
 import axios from "axios";
 
-const urlBase="https://shielded-sands-02777.herokuapp.com"
+const urlBase="http://localhost:8080"
 
 export const loadAllQuestion=()=>(dispatch)=>{
   
@@ -133,6 +133,23 @@ export const getUser=(uid)=> async(dispatch)=>{
   }).catch(function (error) {
     console.error(error);
   });
+}
+
+export const updateName=(data)=>(dispatch)=>{
+
+  const options = {
+    method: 'PUT',
+    url: `${urlBase}/updateUser`,
+    headers: {'Content-Type': 'application/json'},
+    data: data
+  };
+  
+  axios.request(options).then(function (response) {
+    dispatch(loginAction(response.data));
+  }).catch(function (error) {
+    console.error(error);
+  });
+
 }
 
 
