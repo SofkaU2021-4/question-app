@@ -36,8 +36,8 @@ useEffect(()=>{
     return (
         <>
             <main className=" bg-slate-100 w-full h-full flex flex-col">
-                <Navbar elements={publicNavbar}/>
-            <div className="  flex flex-col justify-center my-auto w-full h-full"> 
+                <Navbar elements={publicNavbar} url="/QuestionsPage"/>
+            <div className="  flex flex-col justify-center my-auto w-full h-full overflow-y-auto"> 
             
             
                 <div className="w-full h-full">

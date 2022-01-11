@@ -40,14 +40,14 @@ const OneQuestionPrivate = ({oneQuestion}) => {
                          
                                 
                             </div>
-                            {/* <button onClick={()=>navigate(`/private/Question/${oneQuestion.id}`)} className="text-blue-500">Respuestas</button> */}
+
                      
                         </div>
 
                             <div className="mt-4  ">
                                     <ReactQuill value={oneQuestion.descripcion}  
                                     modules={modules}   
-                                    readOnly='true'/>
+                                    readOnly={true}/>
                             </div>     
                                
                     </div>

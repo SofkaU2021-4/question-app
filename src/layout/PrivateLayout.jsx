@@ -36,7 +36,7 @@ const PrivateLayout = () => {
         {state.user
         ?(
         <main className=" bg-slate-200 w-full h-full flex flex-col ">
-            <Navbar elements={privateNavbar}/>
+            <Navbar elements={privateNavbar} url="/private/QuestionsPage"/>
         
             <div className="  flex flex-col justify-center my-auto w-full h-full overflow-y-auto"> 
                 <div className="w-full h-full">

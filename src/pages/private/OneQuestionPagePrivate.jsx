@@ -30,7 +30,7 @@ const OneQuestionPagePrivate = () => {
                  {oneQuestion.answers&&oneQuestion.answers.map((answer)=>{
                      return(
                          
-                         <ViewAnswer key={answer.id} answer={answer} />
+                         <ViewAnswer key={answer.id} answer={answer} privated={true} />
                      )
                  }) }
                  </div>

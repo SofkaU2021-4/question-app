@@ -1,43 +1,73 @@
 import { Link } from "react-router-dom"
-import { Dialog,Tooltip } from '@material-ui/core';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactQuill from "react-quill"
 
 const QuestionsPublic = ({question}) => {  
     const navigate = useNavigate();
     const [openDialog,setOpenDialog]=useState(false)
 
-    return(<div className="flex it">
-            <button className="w-full" key={question.id} onClick={()=>navigate(`/question/${question.id}`)}>
-                <div className="cards-container mb-6 shadow-sm bg-white transition duration-250 ease-in-out transform hover:-translate-y-1 hover:scale-100  ">
-                <div className="mx-6 mb-5">
-                    <div className="flex">
-                            <i className="fas fa-question text-white bg-gray-800 mr-4 pt-4 px-3 pb-2"></i>
-                        <div className="card-info w-full align-center flex justify-between">
-                            <span className="font-semibold pt-3">{question.question}</span>
-                            <div className="edit-card pt-4 space-x-5">
-                               
-                            </div>
-                        </div>
+    return(<div className="flex max-h-80 relative overflow-y-auto shadow-md mt-5" key={question.id}>
+    <div className="w-full" >
+        <div className="cards-container  shadow-lg bg-white  ">
+        <div className=" px-3 my-3">
+            <div className="flex flex-col">
+                <div className="w-full flex justify-end">
+                </div>
+                <div className=" flex w-full">
+                    <div className="w-full self-center flex sticky">
+                        <img src={question.userDTO.pictureUrl} className="h-6 rounded-full " />
+                        <span className="ml-2 text-sm  text-gray-400 self-center ">Creado por</span>
+                        <span className="ml-2 text-sm font-semibold self-center">{question.userDTO.name}</span>
                     </div>
-                    <Dialog open={openDialog}>
-                        <div className ='p-8 flex flex-col'>
-                        <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
-                        <div className='flex w-full items-center justify-center'> 
-                            <button to="{variableCards.page}" className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </button>
-                            <button onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to="{variableCards.page}"> No </button>
-                        </div>
-                        </div>
-                    </Dialog>
+                    
+                    
+                    <div className="w-full self-center justify-end flex">
+                        <span className="ml-2 text-sm  self-center">Fecha de creacion</span>
+                        <span className="ml-2 text-sm font-semibold self-center ">{question.fechaCreacion}</span>
                     </div>
                 </div>
-           
+                <div className="card-info w-full align-center flex justify-between mt-5 ">
+                    <span className="font-semibold self-center text-gray-400 text-lg ">{question.question}</span>
+                    <div className="edit-card pt-4 space-x-5">
+                 
+                        
+                    </div>
+                    <button onClick={()=>navigate(`/Question/${question.id}`)} className="text-blue-500">Respuestas</button>
+             
+                </div>
+            
 
-            </button>
+                    <div className="mt-4  ">
+                            <ReactQuill value={question.descripcion}  
+                            modules={modules}   
+                            readOnly={true}/>
+                    </div>     
+                       
+            </div>
+            
+            </div>
+         
+            
         </div>
+        
+
+
+    </div>
+
+
+</div>
                 
 
     )
 }
+
+
+const modules = {
+    toolbar: false
+};
+
+
+
 
 export default QuestionsPublic

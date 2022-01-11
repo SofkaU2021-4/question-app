@@ -5,7 +5,7 @@ import { app } from "../service/firebase"
 import {logoutAction} from "../actions/AuthorActions"
 import { useDispatch } from "react-redux"
 
-const Navbar = () => {
+const Navbar = ({url}) => {
     const dispatch = useDispatch();
     const handler=()=>{
         app.auth().signOut()
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <span className="logo text-3xl text-black self-center ml-2 font-bold">SofkAsk</span>
                 </div>
                 <div className="flex justify-center">
-                    <Link to="/private/QuestionsPage" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">PREGUNTAS</Link>
+                    <Link to={url} className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">Preguntas</Link>
                     {user?(
                 <div className="flex">
                     <div className="flex">
@@ -34,9 +34,15 @@ const Navbar = () => {
                     <div className="flex">
                         <ModalPerfil user={user}></ModalPerfil>
                     </div>
-                    <button className="text-blue-500" onClick={handler}>Cerrar sesion</button>
+                    <button className="text-blue-500 underline" onClick={handler}>Cerrar sesion</button>
                  </div>
-            ):null }
+            ):(
+                <div className="flex">
+                        <div className="flex">
+                        <Link to="/" className="text-white shadow-md self-center font-bold border px-6 rounded-full py-1 bg-pink-700 ">Home</Link>
+                    </div>
+                </div>
+            ) }
                 </div>
                         
         </div>

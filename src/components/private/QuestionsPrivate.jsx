@@ -4,6 +4,8 @@ import  {useNavigate} from"react-router-dom"
 import { useDispatch,useSelector } from 'react-redux';
 import { deleteQuestion } from '../../app/middleware/payloadQuestions';
 import ReactQuill from "react-quill"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const QuestionsPrivate = ({question}) => {
@@ -47,7 +49,7 @@ const QuestionsPrivate = ({question}) => {
                          
                                 
                             </div>
-                            <button onClick={()=>navigate(`/private/Question/${question.id}`)} className="text-blue-500">Respuestas</button>
+                            <button onClick={()=>navigate(`/private/Question/${question.id}`)} className="text-blue-500 underline">Respuestas</button>
                      
                         </div>
                     
@@ -55,7 +57,7 @@ const QuestionsPrivate = ({question}) => {
                             <div className="mt-4  ">
                                     <ReactQuill value={question.descripcion}  
                                     modules={modules}   
-                                    readOnly='true'/>
+                                    readOnly={true}/>
                             </div>     
                                
                     </div>
@@ -64,7 +66,7 @@ const QuestionsPrivate = ({question}) => {
                         <h1 className= 'text gray-800 text-xl font-bold'> ¿Esta seguro de querer eliminarlo? </h1>
                         <div className='flex w-full items-center justify-center'> 
                             <button onClick={()=>{
-                                dispatch(deleteQuestion(question.id))
+                                dispatch(deleteQuestion(question.id,toast))
                                 setOpenDialog(false)}} className= 'mx-2 my-4 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'> Si </button>
                             <button onClick={()=>setOpenDialog(false)} className= 'mx-2 my-4 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md' to="{variableCards.page}"> No </button>
                         </div>
@@ -72,7 +74,17 @@ const QuestionsPrivate = ({question}) => {
                     </Dialog>
                     
                     </div>
-                 
+                    <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+            />
                     
                 </div>
                 

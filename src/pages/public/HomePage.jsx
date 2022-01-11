@@ -2,10 +2,11 @@ import image from '../../media/googleLogo.png';
 import { app,google } from '../../service/firebase';
 import {  useDispatch} from "react-redux"
 import { useNavigate } from 'react-router-dom';
-import { loginAction } from '../../actions/AuthorActions';
 import useFormData from '../../hooks/UseFormData';
 import { postUser,getUser } from '../../app/middleware/payloadQuestions';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -25,12 +26,28 @@ const HomePage = () => {
                 user.user.multiFactor.user.uid,
                 "https://firebasestorage.googleapis.com/v0/b/quetions-app.appspot.com/o/pngwing.com.png?alt=media&token=ae687cb3-1160-4aa6-909c-a4e320f0a1c6"
                 ,formData.nombre)))
-            .catch(error=>console.log("Cuenta ya creada"))
+            .catch(error=>toast.error('Usuario ya existe', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                }))
             form.current.reset();
         }else{
             app.auth().signInWithEmailAndPassword(formData.email,formData.pass)
             .then(user=>dispatch(getUser(user.user.multiFactor.user.uid)))
-            .catch(()=>console.log("usuario no existe o contraseña erronea"))
+            .catch(error=>toast.error('Error de usuario y contraseña', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                }))
         }
     
       }
@@ -93,8 +110,19 @@ const HomePage = () => {
                 </div>
             </button>
 
-            {registro?<button className="self-center text-blue-400" onClick={()=>setRegistro(false)} >¿Ya estas Registrado? Login click aqui </button>
-            :<button className="self-center text-blue-400" onClick={()=>setRegistro(true)} >¿Aun no estas Registrado? Registrate click aqui </button>}
+            {registro?<button className="self-center text-blue-400 underline" onClick={()=>setRegistro(false)} >¿Ya estas Registrado? Login click aqui </button>
+            :<button className="self-center text-blue-400 underline" onClick={()=>setRegistro(true)} >¿Aun no estas Registrado? Registrate click aqui </button>}
+            <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+            />
         </div>
     )
 }

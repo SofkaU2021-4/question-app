@@ -58,7 +58,7 @@ export const postQuestion=(question,navigate)=>{
 }
 
 
-export const postAnswer=(userId,questionId,data)=>(dispatch)=>{
+export const postAnswer=(userId,questionId,data,toast)=>(dispatch)=>{
 
   const options = {
       method: 'POST',
@@ -68,19 +68,36 @@ export const postAnswer=(userId,questionId,data)=>(dispatch)=>{
     };
     
     axios.request(options).then(function (response) {
+      toast.success('Respuesta creada con exito', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       dispatch(oneQuestionLoadSucces(response.data))
     }).catch(function (error) {
-      console.error(error);
     });
 }
 
 
-export const deleteQuestion=(id)=>(dispatch)=>{
+export const deleteQuestion=(id,toast)=>(dispatch)=>{
   
     const options = {method: 'DELETE', url: `${urlBase}/delete/${id}`};
 
         axios.request(options).then(function (response) {
           dispatch(loadAllQuestion())
+          toast.success('Respuesta creada con exito', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
         }).catch(function (error) {
         console.error(error);
         });
@@ -151,5 +168,23 @@ export const updateName=(data)=>(dispatch)=>{
   });
 
 }
+
+export const deleteAnswer=(id)=>(dispatch)=>{
+
+  const options = {method: 'DELETE', 
+   url: `${urlBase}/answer/${id}`};
+
+  axios.request(options).then(function (response) {
+    dispatch(loadById(response.data))
+  }).catch(function (error) {
+    console.error(error);
+  });
+  
+
+}
+
+
+
+
 
 
